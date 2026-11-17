@@ -59,3 +59,16 @@ main h1 {
 #sobre {
     margin-top: 80px;
 }
+.membro {
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    width: 130px;
+}
+
+.membro img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+}
