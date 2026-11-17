@@ -42,3 +42,9 @@ header img {
     height: auto;
     display: block;
 }
+main h1 {
+    color: #315b3b;
+    text-align: center;
+    font-size: 30px;
+    margin-top: 35px;
+}
