@@ -105,3 +105,28 @@ main h1 {
 .membro:hover img {
     transform: scale(1.08);
 }
+footer {
+    background-color: #e8f5e9;
+    text-align: center;
+    padding: 30px 15px;
+    margin-top: 40px;
+}
+
+.menu-final {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.menu-final a {
+    color: #2e7d32;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.menu-final a:hover {
+    transform: scale(1.1);
+    color: #1b5e20;
+}
