@@ -60,9 +60,10 @@ main h1 {
     margin-top: 80px;
 }
 
+
 .membros-container {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 25px;
     max-width: 555px;
@@ -70,46 +71,30 @@ main h1 {
 }
 
 .membro {
-    grid-column: span 3;
+    background: white;
+    padding: 12px;
+    border-radius: 12px;
+    width: 120px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
 }
 
-.membro:nth-child(1) {
-    grid-column: 2 / span 3;
+.membro img {
+    width: 75px;
+    height: 75px;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
 }
 
-.membro:nth-child(2) {
-    grid-column: 5 / span 3;
+.membro:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
-.membro:nth-child(3) {
-    grid-column: 8 / span 3;
-}
-
-.membro:nth-child(4) {
-    grid-column: 1 / span 3;
-}
-
-.membro:nth-child(5) {
-    grid-column: 4 / span 3;
-}
-
-.membro:nth-child(6) {
-    grid-column: 7 / span 3;
-}
-
-.membro:nth-child(7) {
-    grid-column: 10 / span 3;
-}
-
-@media (max-width: 600px) {
-    .membros-container {
-        grid-template-columns: repeat(2, 120px);
-        max-width: 265px;
-    }
-
-    .membro:nth-child(n) {
-        grid-column: auto;
-    }
+.membro:hover img {
+    transform: scale(1.08);
 }
 
 .membro img {
