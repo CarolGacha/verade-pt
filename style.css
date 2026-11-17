@@ -56,3 +56,6 @@ main h1 {
 #sobre h3 {
     text-align: center;
 }
+#sobre {
+    margin-top: 80px;
+}
