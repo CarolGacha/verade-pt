@@ -59,16 +59,24 @@ main h1 {
 #sobre {
     margin-top: 80px;
 }
+.membros-container {
+    display: grid;
+    grid-template-columns: repeat(4, 120px);
+    justify-content: center;
+    gap: 25px;
+}
+
 .membro {
     background: white;
-    padding: 15px;
+    padding: 12px;
     border-radius: 12px;
-    width: 130px;
+    width: 120px;
+    box-sizing: border-box;
 }
 
 .membro img {
-    width: 100px;
-    height: 100px;
+    width: 75px;
+    height: 75px;
     object-fit: cover;
     border-radius: 50%;
 }
