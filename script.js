@@ -1,10 +1,35 @@
 
 const opinions = [
     {
-        text: "As opiniões dos nossos membros aparecerão aqui!",
-        author: "Membro do Verade PT"
+        text: "Achei que é um grupo muito acolhedor e legais de conversar com as pessoas.",
+        author: "lyn__ ★₊˚﹟🍓'"
+    },
+    {
+        text: "Me sinto bem lá desde que entrei é muito confortável e socializa-se facimente tem algumas loucuras mas habituas-te com o tempo.",
+        author: "•Emmanuel•"
+    },
+    {
+        text: "Eu estou da Verade PT desde do seu lançamento, quando perguntavam nos comentários quem queria entrar, eu entrei e não me arrependo. Uma comunidade super bonita podendo fazer até amizade com as pessoas e conhecendo elas na vida real nos encontrinhos (Como aconteceu no show), agradeço imenso às adms, de coração quentinho da Anny. QUE CRESÇA MAIS E MAIS A COMUNIDADE  !!",
+        author: "ANNY👁️"
+    },
+    {
+        text: "Eu gosto das pessoas, das amizades que fiz, gostarei das mesmas coisas. É isto, resumindo, eu amo o Verade PT",
+        author: "Bea ฅ⁠^⁠•⁠ﻌ⁠•⁠^⁠ฅ"
+    },
+    {
+        text: "Então acho que verade pt é uma comunidade incrível têm pessoas que nos ajudam quando é importante podemos falar sobre o que se passa com nós e as pessoas são muito simpáticas e amáveis",
+        author: "David Anjos"
+    },
+    {
+        text: "Para mim verade pt ´uma comunidade muito acolhedora e que considero a melhor comunidade que já paricipei",
+        author: "- ¶[Sarakichu]¶-"
+    },
+    {
+        text: "Na minha opinião, é o melhor grupo que entrei pois finalmente n me sinto sozinha por gostar de mundo Torajo, além de adorar socializar, participar em projetos e me divertir com aqueles aurudos. Amo eles",
+        author: "Carolaina🌸☕🍏"
     }
 ];
+
 
 let currentOpinion = 0;
 let isPaused = false;
