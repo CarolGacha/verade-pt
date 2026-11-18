@@ -14,12 +14,21 @@ const opinionAuthor = document.getElementById("opinionAuthor");
 const opinionNumber = document.getElementById("opinionNumber");
 const opinionCounter = document.getElementById("opinionCounter");
 
+
 function showOpinion() {
-    opinionText.textContent = opinions[currentOpinion].text;
-    opinionAuthor.textContent = opinions[currentOpinion].author;
-    opinionNumber.textContent = "Opinião " + (currentOpinion + 1);
-    opinionCounter.textContent =
-        (currentOpinion + 1) + " / " + opinions.length;
+    const card = document.querySelector(".opinion-card");
+
+    card.classList.add("changing");
+
+    setTimeout(() => {
+        opinionText.textContent = opinions[currentOpinion].text;
+        opinionAuthor.textContent = opinions[currentOpinion].author;
+        opinionNumber.textContent = "Opinião " + (currentOpinion + 1);
+        opinionCounter.textContent =
+            (currentOpinion + 1) + " / " + opinions.length;
+
+        card.classList.remove("changing");
+    }, 350);
 }
 
 document.getElementById("nextOpinion").addEventListener("click", () => {
