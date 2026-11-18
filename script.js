@@ -21,7 +21,7 @@ const opinions = [
         author: "David Anjos"
     },
     {
-        text: "Para mim verade pt ´uma comunidade muito acolhedora e que considero a melhor comunidade que já paricipei",
+        text: "Para mim verade pt é uma comunidade muito acolhedora e que considero a melhor comunidade que já paricipei",
         author: "- ¶[Sarakichu]¶-"
     },
     {
