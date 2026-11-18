@@ -180,3 +180,9 @@ footer {
     padding: 30px 20px;
     margin-bottom: 40px;
 }
+
+.separador-verade {
+    text-align: center;
+    font-size: 50px;
+    margin: 30px 0;
+}
