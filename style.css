@@ -180,7 +180,25 @@ footer {
     padding: 30px 20px;
     margin-bottom: 40px;
 }
+.opinions-section {
+    text-align: center;
+    margin: 50px auto;
+    padding: 20px;
+}
 
+.opinions-carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    max-width: 750px;
+    margin: 25px auto;
+}
+
+.opinion-card {
+    text-align: center;
+    flex: 1;
+}
 .separador-verade {
     text-align: center;
     font-size: 50px;
