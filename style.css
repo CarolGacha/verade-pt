@@ -121,6 +121,18 @@ main h1 {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
+/* ANIMAÇÃO DO CARROSSEL */
+
+.opinion-card {
+    transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.opinion-card.changing {
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+
 .membro img {
     transition: transform 0.3s ease;
 }
