@@ -153,3 +153,6 @@ footer {
     transform: scale(1.1);
     color: #1b5e20;
 }
+.admins-section h2 {
+    text-align: center;
+}
