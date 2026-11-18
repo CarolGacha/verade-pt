@@ -175,3 +175,8 @@ footer {
     text-align: center;
     font-size: 40px;
 }
+.admins-section,
+.community-section {
+    padding: 30px 20px;
+    margin-bottom: 40px;
+}
