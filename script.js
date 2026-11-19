@@ -86,3 +86,108 @@ setInterval(() => {
 }, 5000);
 
 showOpinion();
+
+// CALENDÁRIO DE EVENTOS
+
+const calendarioDias = document.getElementById("calendarioDias");
+
+if (calendarioDias) {
+
+    let dataAtual = new Date(2026, 10, 1);
+
+    const eventos = {
+        // Exemplo:
+        // "2026-11-21": [
+        //     { tipo: "encontrinho", nome: "Encontrinho do Verade PT" }
+        // ],
+        // "2026-11-28": [
+        //     { tipo: "show", nome: "Show de Mundo Torajo" }
+        // ]
+    };
+
+    function criarCalendario() {
+        const ano = dataAtual.getFullYear();
+        const mes = dataAtual.getMonth();
+
+        const nomeMes = dataAtual.toLocaleDateString("pt-PT", {
+            month: "long",
+            year: "numeric"
+        });
+
+        document.getElementById("mesAno").textContent =
+            nomeMes.charAt(0).toUpperCase() + nomeMes.slice(1);
+
+        calendarioDias.innerHTML = "";
+
+        const diasSemana = ["Seg", "Ter", "Qua", "Qui", "Sex", "Sáb", "Dom"];
+
+        diasSemana.forEach(dia => {
+            const elemento = document.createElement("div");
+            elemento.className = "dia-calendario semana";
+            elemento.textContent = dia;
+            calendarioDias.appendChild(elemento);
+        });
+
+        const primeiroDia = new Date(ano, mes, 1);
+        const totalDias = new Date(ano, mes + 1, 0).getDate();
+
+        const espacosVazios = (primeiroDia.getDay() + 6) % 7;
+
+        for (let i = 0; i < espacosVazios; i++) {
+            calendarioDias.appendChild(document.createElement("div"));
+        }
+
+        for (let dia = 1; dia <= totalDias; dia++) {
+            const elemento = document.createElement("div");
+            elemento.className = "dia-calendario";
+
+            const data = `${ano}-${String(mes + 1).padStart(2, "0")}-${String(dia).padStart(2, "0")}`;
+
+            const botao = document.createElement("button");
+            botao.textContent = dia;
+
+            const eventosDoDia = eventos[data] || [];
+
+            if (eventosDoDia.length > 0) {
+                const simbolos = document.createElement("div");
+                simbolos.textContent = eventosDoDia.map(evento =>
+                    evento.tipo === "encontrinho" ? "🤝" : "🎤"
+                ).join(" ");
+                elemento.appendChild(simbolos);
+            }
+
+            botao.addEventListener("click", () => {
+                document.querySelectorAll(".dia-calendario").forEach(el =>
+                    el.classList.remove("selecionado")
+                );
+
+                elemento.classList.add("selecionado");
+
+                const detalhes = document.getElementById("detalhesEvento");
+
+                if (eventosDoDia.length > 0) {
+                    detalhes.innerHTML = eventosDoDia.map(evento =>
+                        `<p>${evento.tipo === "encontrinho" ? "🤝" : "🎤"} ${evento.nome}</p>`
+                    ).join("");
+                } else {
+                    detalhes.innerHTML = `<p>Não existem eventos registados para ${dia}/${mes + 1}/${ano}.</p>`;
+                }
+            });
+
+            elemento.appendChild(botao);
+            calendarioDias.appendChild(elemento);
+        }
+    }
+
+    document.getElementById("mesAnterior").addEventListener("click", () => {
+        dataAtual.setMonth(dataAtual.getMonth() - 1);
+        criarCalendario();
+    });
+
+    document.getElementById("mesSeguinte").addEventListener("click", () => {
+        dataAtual.setMonth(dataAtual.getMonth() + 1);
+        criarCalendario();
+    });
+
+    criarCalendario();
+}
