@@ -85,7 +85,13 @@ setInterval(() => {
     }
 }, 5000);
 
-showOpinion();
+if (opinionText && opinionAuthor && opinionNumber && opinionCounter) {
+
+    // Coloca aqui os três addEventListener
+    // e o setInterval das opiniões.
+
+    showOpinion();
+}
 
 // CALENDÁRIO DE EVENTOS
 
