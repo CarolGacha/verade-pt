@@ -25,6 +25,10 @@ const opinions = [
         author: "- ¶[Sarakichu]¶-"
     },
     {
+        text: "INCRÍVEL PARA CARAÇAS! Uma das melhores comunidades que já entrei",
+        author: "ˑ 𖥻 ִᨮׁׅ֮Yυׁׅ ꩇixׁׅ ּ ! 🍥"
+    },
+    {
         text: "Na minha opinião, é o melhor grupo que entrei pois finalmente n me sinto sozinha por gostar de mundo Torajo, além de adorar socializar, participar em projetos e me divertir com aqueles aurudos. Amo eles",
         author: "Carolaina🌸☕🍏"
     }
