@@ -96,6 +96,7 @@ if (opinionText && opinionAuthor && opinionNumber && opinionCounter) {
 // CALENDÁRIO DE EVENTOS
 
 const calendarioDias = document.getElementById("calendarioDias");
+console.log("CALENDÁRIO ENCONTRADO:", calendarioDias);
 
 if (calendarioDias) {
 
