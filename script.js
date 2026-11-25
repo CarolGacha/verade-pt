@@ -169,5 +169,11 @@ else if (evento === "setembro12") {
         </a>
     `;
 }
-
+    
+else if (evento === "outubro25") {
+    detalhes.innerHTML = `
+        <h3>🤝 Encontrinho do Verade PT</h3>
+        <p>📅 25 de outubro de 2026 às 10:00 da manhã</p>
+        <p>📍 Jardim da Rua do Capitão Leitão, Vila Nova de Gaia, Porto, Portugal</p>
+    `;
 }
