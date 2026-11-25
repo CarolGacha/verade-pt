@@ -197,3 +197,35 @@ else if (evento === "novembro7") {
         </a>
     `;
 }
+
+else if (evento === "novembro14") {
+    detalhes.innerHTML = `
+        <h3>🤝🎤 Encontrinhos + Shows do Verade PT</h3>
+        <p>📅 14 de novembro de 2026</p>
+        <p>🤝 1.º Encontrinho: 12:30</p>
+        <p>🎤 1.º Show: 15:00</p>
+        <p>🤝 2.º Encontrinho: 15:30</p>
+        <p>🎤 2.º Show: 18:30</p>
+        <p>📍 Exponor, Porto, Portugal</p>
+        <a href="https://www.tiktok.com/@veradept.ofc/photo/7705518055761169696?is_from_webapp=1&sender_device=pc&web_id=7708715787724621344"
+   target="_blank"
+   rel="noopener noreferrer">
+    Mais informações ↗
+</a>
+    `;
+}
+
+else if (evento === "novembro15") {
+    detalhes.innerHTML = `
+        <h3>🤝🎤 Encontrinho + Show do Verade PT</h3>
+        <p>📅 15 de novembro de 2026</p>
+        <p>🤝 Encontrinho: 12:30</p>
+        <p>🎤 Show: 15:00</p>
+        <p>📍 Coliseu dos Recreios, Lisboa, Portugal</p>
+        <a href="https://www.tiktok.com/@veradept.ofc/photo/7705518055761169696?is_from_webapp=1&sender_device=pc&web_id=7708715787724621344"
+   target="_blank"
+   rel="noopener noreferrer">
+    Mais informações ↗
+</a>
+    `;
+}
