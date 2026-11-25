@@ -1,4 +1,6 @@
 
+/* OPINIÕES DO VERade PT */
+
 const opinions = [
     {
         text: "Achei que é um grupo muito acolhedor e legais de conversar com as pessoas.",
@@ -9,7 +11,7 @@ const opinions = [
         author: "•Emmanuel•"
     },
     {
-        text: "Eu estou da Verade PT desde do seu lançamento, quando perguntavam nos comentários quem queria entrar, eu entrei e não me arrependo. Uma comunidade super bonita podendo fazer até amizade com as pessoas e conhecendo elas na vida real nos encontrinhos (Como aconteceu no show), agradeço imenso às adms, de coração quentinho da Anny. QUE CRESÇA MAIS E MAIS A COMUNIDADE  !!",
+        text: "Eu estou da Verade PT desde do seu lançamento, quando perguntavam nos comentários quem queria entrar, eu entrei e não me arrependo. Uma comunidade super bonita podendo fazer até amizade com as pessoas e conhecendo elas na vida real nos encontrinhos (Como aconteceu no show), agradeço imenso às adms, de coração quentinho da Anny. QUE CRESÇA MAIS E MAIS A COMUNIDADE !!",
         author: "ANNY👁️"
     },
     {
@@ -34,172 +36,66 @@ const opinions = [
     }
 ];
 
-
-let currentOpinion = 0;
-let isPaused = false;
-
 const opinionText = document.getElementById("opinionText");
 const opinionAuthor = document.getElementById("opinionAuthor");
 const opinionNumber = document.getElementById("opinionNumber");
 const opinionCounter = document.getElementById("opinionCounter");
+const opinionCard = document.querySelector(".opinion-card");
 
+const nextOpinion = document.getElementById("nextOpinion");
+const prevOpinion = document.getElementById("prevOpinion");
+const pauseOpinions = document.getElementById("pauseOpinions");
 
-function showOpinion() {
-    const card = document.querySelector(".opinion-card");
+if (
+    opinionText &&
+    opinionAuthor &&
+    opinionNumber &&
+    opinionCounter &&
+    opinionCard &&
+    nextOpinion &&
+    prevOpinion &&
+    pauseOpinions
+) {
+    let currentOpinion = 0;
+    let isPaused = false;
 
-    card.classList.add("changing");
-
-    setTimeout(() => {
+    function showOpinion() {
         opinionText.textContent = opinions[currentOpinion].text;
         opinionAuthor.textContent = opinions[currentOpinion].author;
         opinionNumber.textContent = "Opinião " + (currentOpinion + 1);
         opinionCounter.textContent =
             (currentOpinion + 1) + " / " + opinions.length;
+    }
 
-        card.classList.remove("changing");
-    }, 350);
-}
-
-document.getElementById("nextOpinion").addEventListener("click", () => {
-    currentOpinion = (currentOpinion + 1) % opinions.length;
-    showOpinion();
-});
-
-document.getElementById("prevOpinion").addEventListener("click", () => {
-    currentOpinion =
-        (currentOpinion - 1 + opinions.length) % opinions.length;
-    showOpinion();
-});
-
-document.getElementById("pauseOpinions").addEventListener("click", () => {
-    isPaused = !isPaused;
-
-    document.getElementById("pauseOpinions").textContent =
-        isPaused ? "▶ Continuar" : "⏸ Pausar";
-});
-
-setInterval(() => {
-    if (!isPaused) {
+    nextOpinion.addEventListener("click", () => {
         currentOpinion = (currentOpinion + 1) % opinions.length;
         showOpinion();
-    }
-}, 5000);
+    });
 
-if (opinionText && opinionAuthor && opinionNumber && opinionCounter) {
+    prevOpinion.addEventListener("click", () => {
+        currentOpinion =
+            (currentOpinion - 1 + opinions.length) % opinions.length;
+        showOpinion();
+    });
 
-    // Coloca aqui os três addEventListener
-    // e o setInterval das opiniões.
+    pauseOpinions.addEventListener("click", () => {
+        isPaused = !isPaused;
+        pauseOpinions.textContent =
+            isPaused ? "▶ Continuar" : "⏸ Pausar";
+    });
+
+    setInterval(() => {
+        if (!isPaused) {
+            currentOpinion = (currentOpinion + 1) % opinions.length;
+            showOpinion();
+        }
+    }, 5000);
 
     showOpinion();
 }
 
-// CALENDÁRIO DE EVENTOS
 
-const calendarioDias = document.getElementById("calendarioDias");
-console.log("CALENDÁRIO ENCONTRADO:", calendarioDias);
-
-if (calendarioDias) {
-
-    let dataAtual = new Date(2026, 10, 1);
-
-    const eventos = {
-        // Exemplo:
-        // "2026-11-21": [
-        //     { tipo: "encontrinho", nome: "Encontrinho do Verade PT" }
-        // ],
-        // "2026-11-28": [
-        //     { tipo: "show", nome: "Show de Mundo Torajo" }
-        // ]
-    };
-
-    function criarCalendario() {
-        const ano = dataAtual.getFullYear();
-        const mes = dataAtual.getMonth();
-
-        const nomeMes = dataAtual.toLocaleDateString("pt-PT", {
-            month: "long",
-            year: "numeric"
-        });
-
-        document.getElementById("mesAno").textContent =
-            nomeMes.charAt(0).toUpperCase() + nomeMes.slice(1);
-
-        calendarioDias.innerHTML = "";
-
-        const diasSemana = ["Seg", "Ter", "Qua", "Qui", "Sex", "Sáb", "Dom"];
-
-        diasSemana.forEach(dia => {
-            const elemento = document.createElement("div");
-            elemento.className = "dia-calendario semana";
-            elemento.textContent = dia;
-            calendarioDias.appendChild(elemento);
-        });
-
-        const primeiroDia = new Date(ano, mes, 1);
-        const totalDias = new Date(ano, mes + 1, 0).getDate();
-
-        const espacosVazios = (primeiroDia.getDay() + 6) % 7;
-
-        for (let i = 0; i < espacosVazios; i++) {
-            calendarioDias.appendChild(document.createElement("div"));
-        }
-
-        for (let dia = 1; dia <= totalDias; dia++) {
-            const elemento = document.createElement("div");
-            elemento.className = "dia-calendario";
-
-            const data = `${ano}-${String(mes + 1).padStart(2, "0")}-${String(dia).padStart(2, "0")}`;
-
-            const botao = document.createElement("button");
-            botao.textContent = dia;
-
-            const eventosDoDia = eventos[data] || [];
-
-            if (eventosDoDia.length > 0) {
-                const simbolos = document.createElement("div");
-                simbolos.textContent = eventosDoDia.map(evento =>
-                    evento.tipo === "encontrinho" ? "🤝" : "🎤"
-                ).join(" ");
-                elemento.appendChild(simbolos);
-            }
-
-            botao.addEventListener("click", () => {
-                document.querySelectorAll(".dia-calendario").forEach(el =>
-                    el.classList.remove("selecionado")
-                );
-
-                elemento.classList.add("selecionado");
-
-                const detalhes = document.getElementById("detalhesEvento");
-
-                if (eventosDoDia.length > 0) {
-                    detalhes.innerHTML = eventosDoDia.map(evento =>
-                        `<p>${evento.tipo === "encontrinho" ? "🤝" : "🎤"} ${evento.nome}</p>`
-                    ).join("");
-                } else {
-                    detalhes.innerHTML = `<p>Não existem eventos registados para ${dia}/${mes + 1}/${ano}.</p>`;
-                }
-            });
-
-            elemento.appendChild(botao);
-            calendarioDias.appendChild(elemento);
-        }
-    }
-
-    document.getElementById("mesAnterior").addEventListener("click", () => {
-        dataAtual.setMonth(dataAtual.getMonth() - 1);
-        criarCalendario();
-    });
-
-    document.getElementById("mesSeguinte").addEventListener("click", () => {
-        dataAtual.setMonth(dataAtual.getMonth() + 1);
-        criarCalendario();
-    });
-
-    criarCalendario();
-}
-
-// NAVEGAÇÃO ENTRE OS MESES
+/* CALENDÁRIO MANUAL DE EVENTOS */
 
 const meses = [
     { id: "mesSetembro", nome: "Setembro 2026" },
@@ -208,30 +104,42 @@ const meses = [
     { id: "mesDezembro", nome: "Dezembro 2026" }
 ];
 
-let mesAtual = 2;
+const tituloMes = document.getElementById("mesAno");
+const botaoAnterior = document.getElementById("mesAnterior");
+const botaoSeguinte = document.getElementById("mesSeguinte");
 
-function mostrarMes() {
-    meses.forEach((mes, index) => {
-        document.getElementById(mes.id).style.display =
-            index === mesAtual ? "block" : "none";
+const blocosMeses = meses.map(mes => document.getElementById(mes.id));
+
+if (
+    tituloMes &&
+    botaoAnterior &&
+    botaoSeguinte &&
+    blocosMeses.every(bloco => bloco !== null)
+) {
+    let mesAtual = 2;
+
+    function mostrarMes() {
+        blocosMeses.forEach((bloco, index) => {
+            bloco.style.display =
+                index === mesAtual ? "block" : "none";
+        });
+
+        tituloMes.textContent = meses[mesAtual].nome;
+    }
+
+    botaoAnterior.addEventListener("click", () => {
+        if (mesAtual > 0) {
+            mesAtual--;
+            mostrarMes();
+        }
     });
 
-    document.getElementById("mesAno").textContent =
-        meses[mesAtual].nome;
+    botaoSeguinte.addEventListener("click", () => {
+        if (mesAtual < meses.length - 1) {
+            mesAtual++;
+            mostrarMes();
+        }
+    });
+
+    mostrarMes();
 }
-
-document.getElementById("mesAnterior").addEventListener("click", () => {
-    if (mesAtual > 0) {
-        mesAtual--;
-        mostrarMes();
-    }
-});
-
-document.getElementById("mesSeguinte").addEventListener("click", () => {
-    if (mesAtual < meses.length - 1) {
-        mesAtual++;
-        mostrarMes();
-    }
-});
-
-mostrarMes();
