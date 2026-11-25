@@ -175,5 +175,11 @@ else if (evento === "outubro25") {
         <h3>🤝 Encontrinho do Verade PT</h3>
         <p>📅 25 de outubro de 2026 às 10:00 da manhã</p>
         <p>📍 Jardim da Rua do Capitão Leitão, Vila Nova de Gaia, Porto, Portugal</p>
+
+        <a href="https://www.tiktok.com/@veradept.ofc/photo/7694738715205291296?is_from_webapp=1&sender_device=pc&web_id=7708715787724621344"
+           target="_blank"
+           rel="noopener noreferrer">
+            Mais informações ↗
+        </a>
     `;
 }
