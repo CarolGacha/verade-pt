@@ -198,3 +198,40 @@ if (calendarioDias) {
 
     criarCalendario();
 }
+
+// NAVEGAÇÃO ENTRE OS MESES
+
+const meses = [
+    { id: "mesSetembro", nome: "Setembro 2026" },
+    { id: "mesOutubro", nome: "Outubro 2026" },
+    { id: "mesNovembro", nome: "Novembro 2026" },
+    { id: "mesDezembro", nome: "Dezembro 2026" }
+];
+
+let mesAtual = 2;
+
+function mostrarMes() {
+    meses.forEach((mes, index) => {
+        document.getElementById(mes.id).style.display =
+            index === mesAtual ? "block" : "none";
+    });
+
+    document.getElementById("mesAno").textContent =
+        meses[mesAtual].nome;
+}
+
+document.getElementById("mesAnterior").addEventListener("click", () => {
+    if (mesAtual > 0) {
+        mesAtual--;
+        mostrarMes();
+    }
+});
+
+document.getElementById("mesSeguinte").addEventListener("click", () => {
+    if (mesAtual < meses.length - 1) {
+        mesAtual++;
+        mostrarMes();
+    }
+});
+
+mostrarMes();
