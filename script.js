@@ -155,4 +155,19 @@ function mostrarEvento(evento) {
         `;
     }
 
+   
+else if (evento === "setembro12") {
+    detalhes.innerHTML = `
+        <h3>🤝 Encontrinho do Verade PT</h3>
+        <p>📅 12 de setembro de 2026 às 10:00 da manhã</p>
+        <p>📍 Avenida Almada Gago Coutinho, Lisboa</p>
+
+        <a href="https://www.tiktok.com/@veradept.ofc/photo/7682839338173943072?is_from_webapp=1&sender_device=pc&web_id=7708715787724621344"
+           target="_blank"
+           rel="noopener noreferrer">
+            Mais informações ↗
+        </a>
+    `;
+}
+
 }
