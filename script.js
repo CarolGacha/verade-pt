@@ -183,3 +183,17 @@ else if (evento === "outubro25") {
         </a>
     `;
 }
+
+else if (evento === "novembro7") {
+    detalhes.innerHTML = `
+        <h3>🤝 Encontrinho do Verade PT</h3>
+        <p>📅 7 de novembro de 2026 às 10:00 da manhã</p>
+        <p>📍 Jardim de Santo António dos Cavaleiros, Lisboa, Portugal</p>
+
+        <a href="https://www.tiktok.com/@veradept.ofc/photo/7702537813413137697?is_from_webapp=1&sender_device=pc&web_id=7708715787724621344"
+           target="_blank"
+           rel="noopener noreferrer">
+            Mais informações ↗
+        </a>
+    `;
+}
