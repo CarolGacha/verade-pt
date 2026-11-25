@@ -227,5 +227,6 @@ else if (evento === "novembro15") {
    rel="noopener noreferrer">
     Mais informações ↗
 </a>
-    `;
+        `;
+}
 }
