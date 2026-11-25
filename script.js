@@ -143,3 +143,16 @@ if (
 
     mostrarMes();
 }
+function mostrarEvento(evento) {
+
+    const detalhes = document.getElementById("detalhesEvento");
+
+    if (evento === "setembro2") {
+        detalhes.innerHTML = `
+            <h3>🤝 Encontrinho do Verade PT</h3>
+            <p>📅 2 de setembro de 2026 às 10:00 da manhã</p>
+            <p>📍 Porto, Portugal</p>
+        `;
+    }
+
+}
