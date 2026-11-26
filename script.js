@@ -315,3 +315,9 @@ function iniciarCarrossel() {
 // Inicialização
 mostrarFanart();
 iniciarCarrossel();
+
+{
+    imagem: "Fanart1.jpeg",
+    artista: "Bea ฅ⁠^⁠•⁠ﻌ⁠•⁠^⁠ฅ",
+    personagem: "Azedo (versão mulher)"
+},
