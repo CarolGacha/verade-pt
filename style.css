@@ -448,3 +448,117 @@ header {
         font-size: 13px;
     }
 }
+
+/* GALERIA DE FANARTS */
+
+.fanarts-section {
+    text-align: center;
+    margin: 60px auto;
+    padding: 30px 20px;
+    max-width: 900px;
+}
+
+.fanarts-section h2 {
+    color: #315b3b;
+    font-size: 34px;
+}
+
+.fanarts-section > p {
+    color: #52785a;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.fanarts-carrossel {
+    background: #e8f5e9;
+    border: 3px solid #c62828;
+    border-radius: 22px;
+    padding: 25px;
+    margin: 30px auto;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.fanart-slide {
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+}
+
+.fanart-slide img {
+    width: 100%;
+    max-width: 550px;
+    max-height: 450px;
+    object-fit: contain;
+    border-radius: 12px;
+}
+
+.fanart-slide h3 {
+    color: #c62828;
+    font-size: 23px;
+    margin-bottom: 5px;
+}
+
+.fanart-slide p {
+    color: #315b3b;
+    font-size: 16px;
+}
+
+.fanart-controles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    margin: 20px 0;
+}
+
+.fanart-controles button,
+#pausarFanarts {
+    background: #c62828;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 12px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.fanart-controles button:hover,
+#pausarFanarts:hover {
+    background: #a51f1f;
+    transform: scale(1.05);
+}
+
+#fanartContador {
+    color: #315b3b;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+/* VERSÃO PARA TELEMÓVEIS */
+
+@media (max-width: 600px) {
+    .fanarts-section {
+        padding: 15px 8px;
+    }
+
+    .fanarts-section h2 {
+        font-size: 26px;
+    }
+
+    .fanarts-carrossel {
+        padding: 12px;
+    }
+
+    .fanart-slide {
+        padding: 10px;
+    }
+
+    .fanart-slide img {
+        max-height: 300px;
+    }
+
+    .fanart-controles {
+        gap: 15px;
+    }
+}
