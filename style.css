@@ -562,3 +562,14 @@ header {
         gap: 15px;
     }
 }
+/* Animação das fanarts */
+.fanart-slide {
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.fanart-slide.animar {
+    opacity: 0;
+    transform: translateX(25px);
+}
