@@ -250,6 +250,11 @@ const listaFanarts = [
     imagem: "imagens/desenhos/Fanart3.jpeg",
     artista: "~bárbara . ⭐",
     personagem: "Linn"
+    }
+    {
+    imagem: "imagens/desenhos/Fanart4.jpeg",
+    artista: "꧁🍑☆★ᑭєѕѕу★☆🍑꧂",
+    personagem: "Pessy e Paaliaq"
 }
 ];
 
