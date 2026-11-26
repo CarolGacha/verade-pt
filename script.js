@@ -312,3 +312,25 @@ function iniciarCarrossel() {
 // Inicialização
 mostrarFanart();
 iniciarCarrossel();
+
+function mostrarFanart() {
+    const slide = document.querySelector(".fanart-slide");
+    const fanart = listaFanarts[indiceFanart];
+
+    slide.classList.add("animar");
+
+    setTimeout(function() {
+        document.getElementById("fanartImagem").src = fanart.imagem;
+
+        document.getElementById("fanartArtista").textContent =
+            fanart.artista;
+
+        document.getElementById("fanartPersonagem").textContent =
+            "Personagem: " + fanart.personagem;
+
+        document.getElementById("fanartContador").textContent =
+            (indiceFanart + 1) + " / " + listaFanarts.length;
+
+        slide.classList.remove("animar");
+    }, 400);
+}
