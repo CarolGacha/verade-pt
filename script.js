@@ -242,6 +242,12 @@ const listaFanarts = [
     }
 ];
 
+{
+    imagem: "imagens/desenhos/Fanart2.jpeg",
+    artista: "Mafy🍉",
+    personagem: "Maffy e Morajo"
+}
+
 let indiceFanart = 0;
 let fanartsPausado = false;
 
