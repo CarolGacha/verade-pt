@@ -317,7 +317,7 @@ mostrarFanart();
 iniciarCarrossel();
 
 {
-    imagem: "desenhos/Fanart1.jpeg",
+    imagem: "imagens/desenhos/Fanart1.jpeg",
     artista: "Bea ฅ⁠^⁠•⁠ﻌ⁠•⁠^⁠ฅ",
     personagem: "Azedo (versão mulher)"
 },
