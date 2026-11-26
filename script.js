@@ -233,21 +233,12 @@ else if (evento === "novembro15") {
 
 /* CARROSSEL DE FANARTS - VERADE PT */
 
+
 const listaFanarts = [
     {
-        imagem: "fanarts/fanart1.png",
-        artista: "@Artista1",
-        personagem: "Torajo"
-    },
-    {
-        imagem: "fanarts/fanart2.png",
-        artista: "@Artista2",
-        personagem: "Morajo"
-    },
-    {
-        imagem: "fanarts/fanart3.png",
-        artista: "@Artista3",
-        personagem: "Zulmi"
+        imagem: "imagens/desenhos/Fanart1.jpeg",
+        artista: "Bea ฅ⁠^⁠•⁠ﻌ⁠•⁠^⁠ฅ",
+        personagem: "Azedo (versão mulher)"
     }
 ];
 
@@ -315,9 +306,3 @@ function iniciarCarrossel() {
 // Inicialização
 mostrarFanart();
 iniciarCarrossel();
-
-{
-    imagem: "imagens/desenhos/Fanart1.jpeg",
-    artista: "Bea ฅ⁠^⁠•⁠ﻌ⁠•⁠^⁠ฅ",
-    personagem: "Azedo (versão mulher)"
-},
