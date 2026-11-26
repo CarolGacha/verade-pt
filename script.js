@@ -230,3 +230,88 @@ else if (evento === "novembro15") {
         `;
 }
 }
+
+/* CARROSSEL DE FANARTS - VERADE PT */
+
+const listaFanarts = [
+    {
+        imagem: "fanarts/fanart1.png",
+        artista: "@Artista1",
+        personagem: "Torajo"
+    },
+    {
+        imagem: "fanarts/fanart2.png",
+        artista: "@Artista2",
+        personagem: "Morajo"
+    },
+    {
+        imagem: "fanarts/fanart3.png",
+        artista: "@Artista3",
+        personagem: "Zulmi"
+    }
+];
+
+let indiceFanart = 0;
+let fanartsPausado = false;
+
+function mostrarFanart() {
+
+    const fanart = listaFanarts[indiceFanart];
+
+    document.getElementById("fanartImagem").src = fanart.imagem;
+    document.getElementById("fanartArtista").textContent = fanart.artista;
+    document.getElementById("fanartPersonagem").textContent =
+        "Personagem: " + fanart.personagem;
+
+    document.getElementById("fanartContador").textContent =
+        (indiceFanart + 1) + " / " + listaFanarts.length;
+}
+
+function proximaFanart() {
+    indiceFanart++;
+
+    if (indiceFanart >= listaFanarts.length) {
+        indiceFanart = 0;
+    }
+
+    mostrarFanart();
+}
+
+function anteriorFanart() {
+    indiceFanart--;
+
+    if (indiceFanart < 0) {
+        indiceFanart = listaFanarts.length - 1;
+    }
+
+    mostrarFanart();
+}
+
+function pausarFanarts() {
+
+    fanartsPausado = !fanartsPausado;
+
+    const botao = document.getElementById("pausarFanarts");
+
+    if (fanartsPausado) {
+        clearInterval(intervaloFanarts);
+        botao.textContent = "▶️ Retomar";
+    } else {
+        iniciarCarrossel();
+        botao.textContent = "⏸️ Pausar";
+    }
+}
+
+let intervaloFanarts;
+
+function iniciarCarrossel() {
+    clearInterval(intervaloFanarts);
+
+    intervaloFanarts = setInterval(function() {
+        proximaFanart();
+    }, 5000);
+}
+
+// Inicialização
+mostrarFanart();
+iniciarCarrossel();
