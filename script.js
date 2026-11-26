@@ -234,19 +234,19 @@ else if (evento === "novembro15") {
 /* CARROSSEL DE FANARTS - VERADE PT */
 
 
+
 const listaFanarts = [
     {
         imagem: "imagens/desenhos/Fanart1.jpeg",
         artista: "Bea ฅ⁠^⁠•⁠ﻌ⁠•⁠^⁠ฅ",
         personagem: "Azedo (versão mulher)"
+    },
+    {
+        imagem: "imagens/desenhos/Fanart2.jpeg",
+        artista: "Mafy🍉",
+        personagem: "Maffy e Morajo"
     }
 ];
-
-{
-    imagem: "imagens/desenhos/Fanart2.jpeg",
-    artista: "Mafy🍉",
-    personagem: "Maffy e Morajo"
-}
 
 let indiceFanart = 0;
 let fanartsPausado = false;
