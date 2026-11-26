@@ -245,7 +245,12 @@ const listaFanarts = [
         imagem: "imagens/desenhos/Fanart2.jpeg",
         artista: "Mafy🍉",
         personagem: "Maffy e Morajo"
-    }
+    },
+    {
+    imagem: "imagens/desenhos/Fanart3.jpeg",
+    artista: "~bárbara . ⭐",
+    personagem: "Linn"
+}
 ];
 
 let indiceFanart = 0;
